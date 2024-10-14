@@ -1,6 +1,7 @@
 import styled, { createGlobalStyle } from "styled-components"
 import { Terminal } from "./Terminal"
 import { TopFlare } from "./TopFlare"
+import { SideFlare } from "./SideFlare"
 
 const GlobalStyle = createGlobalStyle`
 	body {
@@ -17,17 +18,12 @@ const Wrapper = styled.div`
 	color: #2af82a;
 `
 
-const SideFlare = styled.div`
-	grid-row-end: span 2;
-	background: hsl(220.16949152542372, 59.5959595959596%, 61.1764705882353%);
-`
-
 function App() {
 	return (
 		<Wrapper>
 			<GlobalStyle />
 			<TopFlare />
-			<SideFlare></SideFlare>
+			<SideFlare />
 			<Terminal />
 		</Wrapper>
 	)
