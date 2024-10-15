@@ -12,10 +12,12 @@ const Diagram = styled.div``
 
 const Decoding = styled.div``
 
+const HardDrive = styled.div``
+
 export const SideFlare = () => {
 	return (
 		<Wrapper>
-			<Diagram>Decoding!!!!</Diagram>
+			<Diagram>Diagram</Diagram>
 			<Decoding>Decoding</Decoding>
 			<HardDrive>Hard Drive</HardDrive>
 		</Wrapper>
