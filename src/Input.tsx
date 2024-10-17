@@ -27,11 +27,12 @@ interface Props {
 }
 
 export const Input = ({ addQuery }: Props) => {
-	const { handleSubmit, register } = useForm()
-	const onSubmit = (data) => {
+	const { handleSubmit, register, reset } = useForm<{ query: string }>()
+	const onSubmit = (data: { query: string }) => {
 		const query = data.query.toUpperCase()
 		console.log({ query })
 		addQuery(query)
+		reset()
 	}
 
 	return (

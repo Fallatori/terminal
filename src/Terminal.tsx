@@ -2,6 +2,7 @@ import { useState } from "react"
 import borderFrame from "./borderFrame.svg"
 import styled from "styled-components"
 import { Input } from "./Input"
+import { terminalAPI } from "./api"
 
 const Wrapper = styled.div`
 	margin: 20px;
@@ -12,13 +13,18 @@ const Wrapper = styled.div`
 `
 
 export const Terminal = () => {
-	const [queries, setQueries] = useState<string[]>([])
+	const [logs, setLogs] = useState<string[]>([])
 	return (
 		<Wrapper>
-			{queries.map((query) => {
+			{logs.map((query) => {
 				return <p>{query}</p>
 			})}
-			<Input addQuery={(query) => setQueries((q) => [...q, query])} />
+			<Input
+				addQuery={(query) => {
+					const terminalOutput = terminalAPI(query)
+					setLogs((q) => [...q, query, ...terminalOutput.split(/\r?\n/)])
+				}}
+			/>
 		</Wrapper>
 	)
 }
