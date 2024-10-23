@@ -1,7 +1,10 @@
 export const help = () => {
 	return `
-    greetings                   Hello world
-    fungus                      Sopp
-    soppstuing                  stuing
+    hello                       Greets the commander
+    repeat                      Repeats whatever you type in
+    roll                        Roll the dice
+    game                        Card game
+    devhelp                     Display VSCode shortcuts
+    clear                       Clears console
     `
 }

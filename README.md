@@ -2,4 +2,8 @@
 
 ## Todo
 
-- Add up arrow to get previous commands
+- Login calls greetings
+
+## BUGS
+
+- Doing "repeat clear" clears terminal because the output is the text "clear"

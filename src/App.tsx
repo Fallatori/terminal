@@ -2,6 +2,7 @@ import styled, { createGlobalStyle } from "styled-components"
 import { Terminal } from "./Terminal"
 import { TopFlare } from "./TopFlare"
 import { SideFlare } from "./SideFlare"
+import { useRef } from "react"
 
 const GlobalStyle = createGlobalStyle`
 	body {
@@ -19,12 +20,20 @@ const Wrapper = styled.div`
 `
 
 function App() {
+	const inputRef = useRef<HTMLInputElement>(null)
 	return (
-		<Wrapper>
+		<Wrapper
+			onClick={() => {
+				if (inputRef.current) {
+					//console.log(inputRef.current)
+					inputRef.current.focus()
+				}
+			}}
+		>
 			<GlobalStyle />
 			<TopFlare />
 			<SideFlare />
-			<Terminal />
+			<Terminal ref={inputRef} />
 		</Wrapper>
 	)
 }
